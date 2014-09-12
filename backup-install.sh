@@ -25,6 +25,8 @@ chmod 755 /etc/cron.daily/backup
 # Copy backup collect and list
 cp src/backup-collect.sh /root/
 cp src/backup-list.sh /root/
+chmod 755 /root/backup-collect.sh
+chmod 755 /root/backup-list.sh
 
 # Installation complete
 echo "Installation is complete."
