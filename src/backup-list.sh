@@ -1,3 +1,5 @@
+#!/bin/bash
+
 . ./.backup-config
 
 duplicity list-current-files sftp://root@${REMOTE}/${REMOTE_BACKUP_DIRECTORY}

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 . ./.backup-config
 
 duplicity collection-status sftp://root@${REMOTE}/${REMOTE_BACKUP_DIRECTORY}

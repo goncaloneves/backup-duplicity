@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Check if user is root
 if [ "$(id -u)" -ne "0" ] ; then
@@ -16,7 +16,7 @@ read -p "What gpg public key will you use to encrypt? (ex: 05AB3DF5) " key
 read -p "What is the gpg passphrase to encrypt and decrypt? " passphrase
 
 # Backup configuration export
-echo "export REMOTE=\"$remote\"\nexport REMOTE_BACKUP_DIRECTORY=\"$remote_backup_directory\"\nexport DIRECTORIES=($directories)\nexport KEY=\"$key\"\nexport PASSPHRASE=\"$passphrase\"" > /root/.backup-config
+echo "#!/bin/bash\nexport REMOTE=\"$remote\"\nexport REMOTE_BACKUP_DIRECTORY=\"$remote_backup_directory\"\nexport DIRECTORIES=($directories)\nexport KEY=\"$key\"\nexport PASSPHRASE=\"$passphrase\"" > /root/.backup-config
 
 # Copy daily cron backup file
 cp src/backup /etc/cron.daily/

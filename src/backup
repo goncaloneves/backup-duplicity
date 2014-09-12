@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 test -x $(which duplicity) || exit 0
 . /root/.backup-config
