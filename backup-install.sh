@@ -20,7 +20,7 @@ echo "export REMOTE=\"$remote\"\nexport REMOTE_BACKUP_DIRECTORY=\"$remote_backup
 
 # Copy daily cron backup file
 cp src/backup /etc/cron.daily/
-chmod -x /etc/cron.daily/backup
+chmod 755 /etc/cron.daily/backup
 
 # Copy backup collect and list
 cp src/backup-collect.sh /root/

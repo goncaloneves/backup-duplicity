@@ -3,12 +3,14 @@
 test -x $(which duplicity) || exit 0
 . /root/.backup-config
 
+export DIRECTORIES_INCLUDE
+
 for i in "${DIRECTORIES[@]}"
 do
 	DIRECTORIES_INCLUDE="$DIRECTORIES_INCLUDE --include /$i"
 done
 
-$(which duplicity) --encrypt-key ${KEY} --full-if-older-than 1W ${$DIRECTORIES_INCLUDE} --exclude '**' / sftp://root@${REMOTE}/${REMOTE_BACKUP_DIRECTORY}
+$(which duplicity) --encrypt-key ${KEY} --full-if-older-than 1W ${DIRECTORIES_INCLUDE} --exclude '**' / sftp://root@${REMOTE}/${REMOTE_BACKUP_DIRECTORY}
 $(which duplicity) remove-older-than 1Y --force sftp://root@${REMOTE}/${REMOTE_BACKUP_DIRECTORY}
 
 unset DIRECTORIES

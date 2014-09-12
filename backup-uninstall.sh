@@ -11,3 +11,6 @@ rm /etc/cron.daily/backup
 rm /root/.backup-config
 rm /root/backup-collect.sh
 rm /root/backup-list.sh
+
+# Installation complete
+echo "Uninstallation is complete."

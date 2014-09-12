@@ -3,7 +3,6 @@
 duplicity collection-status sftp://root@${REMOTE}/${REMOTE_BACKUP_DIRECTORY}
 
 unset DIRECTORIES
-unset DIRECTORIES_INCLUDE
 unset KEY
 unset PASSPHRASE
 unset REMOTE
