@@ -12,5 +12,5 @@ rm /root/.backup-config
 rm /root/backup-collect.sh
 rm /root/backup-list.sh
 
-# Installation complete
+# Uninstallation complete
 echo "Uninstallation is complete."
